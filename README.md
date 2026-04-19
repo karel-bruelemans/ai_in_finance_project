@@ -188,3 +188,38 @@ La métrique principale est l'**accuracy** : proportion de cas où la recommanda
 ---
 
 ## 8. Project Structure 📁
+ai_in_finance_project/
+│
+├── data/                  # Datasets : délits avérés + dataset synthétique
+├── docs/                  # Rapport final
+├── notebooks/
+│   └── Polybot_Officiel.ipynb   # Notebook principal (scraping → notification)
+├── selected_approach/     # Justification des choix méthodologiques
+├── src/
+│   ├── scraper.py         # Appels API Polymarket
+│   ├── detection.py       # Calcul du score composite
+│   └── llm.py             # Intégration Claude + envoi Pushover
+├── .gitignore
+├── requirements.txt
+└── README.md
+
+---
+
+## 9. Installation ⚡
+
+```bash
+pip install -r requirements.txt
+```
+
+Les principales librairies utilisées sont `requests` pour les appels API Polymarket, `pandas` pour la manipulation des données, et `anthropic` pour l'intégration avec Claude.
+
+Le projet nécessite quatre clés d'API à configurer dans votre environnement. Dans Google Colab, ces clés sont gérées via `userdata` ; en local, elles peuvent être stockées dans un fichier `.env` :
+
+```env
+CLAUDE_API_KEY=...
+PUSHOVER_API_TOKEN=...
+PUSHOVER_USER_KEY=...
+AWS_SERVER_API=...
+```
+
+> Sans ces clés, la partie détection et scraping reste fonctionnelle, mais les recommandations LLM et les notifications mobiles seront désactivées.
