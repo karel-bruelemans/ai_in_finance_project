@@ -198,15 +198,17 @@ La métrique principale est l'**accuracy** : proportion de cas où la recommanda
 
 ## 8. Project Structure 🗂️
 
+```
 ├── data/
-│   └── IA_in_finance.csv          # Dataset principal
+│   └── IA_in_finance.csv           # Dataset principal
 ├── docs/
-│   └── IA_in_finance.pptx         # Présentation du projet
+│   └── IA_in_finance.pptx          # Présentation du projet
 ├── selected_approach/
-│   └── AI in Finance Polybot.ipynb  # Notebook principal (scraping + détection + LLM + push)
+│   └── AI in Finance Polybot.ipynb # Notebook principal (scraping + détection + LLM + push)
 ├── src/
-│   └── Polybot.py                 # Code source principal
+│   └── Polybot.py                  # Code source principal
 └── README.md
+```
 
 ---
 
