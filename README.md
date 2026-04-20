@@ -29,7 +29,8 @@ Pour rappel, Polymarket est une plateforme de « marché de prédiction » basé
 - Chaque événement est représenté par des actions (OUI ou NON).
 - Le prix d'une action varie entre 0 $ et 1 $.
 - Si le prix de l'action "OUI" est à 0,60 $, cela signifie que le marché estime qu'il y a 60 % de chances que l'événement se produise.
-- Si vous avez raison, votre action passe à 1 $. Si vous avez tort, elle tombe à 0 $.
+- Si vous avez raison, votre action passe à 1 $.
+- Si vous avez tort, elle tombe à 0 $.
 
 Ainsi, on considère souvent Polymarket comme une source d'information plus fiable que les sondages ou les experts. Pourquoi ? Parce que les gens mettent leur propre argent en jeu, ce qui les incite à être le plus objectifs possible. Surtout que la plateforme utilise la crypto-monnaie (le stablecoin USDC sur le réseau Polygon) : toutes les transactions sont visibles, rapides et ne dépendent pas d'une banque centrale.
 
