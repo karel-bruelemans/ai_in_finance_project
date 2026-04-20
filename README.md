@@ -61,9 +61,9 @@ Pour cela, nous avons loué un serveur **AWS en Allemagne** pour exécuter le co
 
 Ce projet mêle deux tâches distinctes mais complémentaires.
 
-**Tâche 1 — Détection d'anomalie :** à partir des données de positions sur un marché Polymarket, le système cherche à identifier des comportements déviants (classification binaire : délit d'initié détecté ou non). Cette détection repose sur un score composite construit à partir de règles statistiques : principalement un Z-score sur les montants investis, croisé avec le timing de la transaction et le profil du wallet.
+**Tâche 1 - Détection d'anomalie :** à partir des données de positions sur un marché Polymarket, le système cherche à identifier des comportements déviants (classification binaire : délit d'initié détecté ou non). Cette détection repose sur un score composite construit à partir de règles statistiques : principalement un Z-score sur les montants investis, croisé avec le timing de la transaction et le profil du wallet.
 
-**Tâche 2 — Raisonnement par LLM :** une fois le signal détecté, le modèle reçoit le titre et la catégorie du pari, ainsi que le sens du signal (YES ou NO), et produit une recommandation structurée en JSON indiquant quel actif acheter ou vendre parmi une liste prédéfinie de neuf instruments (S&P 500, EuroStoxx, Treasuries, Crude Oil, Gold, Natural Gas, Copper, USD, EUR).
+**Tâche 2 - Raisonnement par LLM :** une fois le signal détecté, le modèle reçoit le titre et la catégorie du pari, ainsi que le sens du signal (YES ou NO), et produit une recommandation structurée en JSON indiquant quel actif acheter ou vendre parmi une liste prédéfinie de neuf instruments (S&P 500, EuroStoxx, Treasuries, Crude Oil, Gold, Natural Gas, Copper, USD, EUR).
 
 En termes d'évaluation, la performance est mesurée par l'**accuracy** de la recommandation LLM : on compare la direction suggérée par le modèle avec ce qui s'est effectivement passé sur le marché financier dans les heures ou jours suivant la résolution du pari. Une matrice de confusion complète a également été calculée sur notre jeu de données synthétique.
 
@@ -188,19 +188,18 @@ La métrique principale est l'**accuracy** : proportion de cas où la recommanda
 ---
 
 ## 8. Project Structure 📁
-ai_in_finance_project/
-│
-├── data/                  # Datasets : délits avérés + dataset synthétique
-├── docs/                  # Rapport final
+├── data/
+│   ├── delits_averes.csv          # ~25 délits d'initiés réels documentés
+│   └── dataset_synthetique.csv    # ~100 titres Polymarket labellisés manuellement
 ├── notebooks/
-│   └── Polybot_Officiel.ipynb   # Notebook principal (scraping → notification)
-├── selected_approach/     # Justification des choix méthodologiques
+│   └── Polybot_Officiel.ipynb     # Notebook principal (scraping + détection + LLM + push)
 ├── src/
-│   ├── scraper.py         # Appels API Polymarket
-│   ├── detection.py       # Calcul du score composite
-│   └── llm.py             # Intégration Claude + envoi Pushover
-├── .gitignore
-├── requirements.txt
+│   ├── scraper.py                 # Appels API Polymarket (gamma-api, data-api, clob)
+│   ├── detector.py                # Calcul Z-score et score composite de détection
+│   └── llm_advisor.py             # Intégration Claude + envoi Pushover
+├── docs/
+│   └── rapport.pdf                # Rapport final du projet
+├── selected_approach/             # Approche retenue et justification méthodologique
 └── README.md
 
 ---
