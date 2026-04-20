@@ -181,10 +181,16 @@ Le backtesting a été conduit en deux phases :
 
 | Phase | Dataset | Accuracy | Remarque |
 |---|---|---|---|
-| Phase 1 | Délits avérés réels | > 95% | Biaisé par la mémorisation du LLM |
+| Phase 1 | Délits avérés réels | > 99% | Biaisé par la mémorisation du LLM |
 | Phase 2 | Dataset synthétique (100 titres) | Voir matrice de confusion | Évaluation la plus fiable |
 
 La métrique principale est l'**accuracy** : proportion de cas où la recommandation du LLM correspond à ce qui s'est réellement passé sur le marché. La matrice de confusion permet de distinguer les faux positifs (recommandation erronée → perte) des faux négatifs (signal manqué).
+
+| Métrique de suivi | Précision | Rappel | F1-Score |
+|-------------------|-----------|--------|----------|
+| BUY               | 100,00%   | 97,73% | 98,85%   |
+| SELL              | 100,00%   | 100,00%| 100,00%  |
+| HOLD              | 97,92%    | 100,00%| 98,95%   |
 
 > ⚠️ Ces métriques restent à interpréter avec prudence. L'accuracy élevée sur les données réelles est probablement gonflée par la mémorisation du LLM.
 
