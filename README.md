@@ -196,19 +196,16 @@ La métrique principale est l'**accuracy** : proportion de cas où la recommanda
 
 ---
 
-## 8. Project Structure 📁
+## 8. Project Structure 🗂️
+
 ├── data/
-│   ├── delits_averes.csv          # 25 délits d'initiés réels documentés
-│   └── dataset_synthetique.csv    # 100 titres Polymarket labellisés manuellement
-├── notebooks/
-│   └── Polybot_Officiel.ipynb     # Notebook principal (scraping + détection + LLM + push)
-├── src/
-│   ├── scraper.py                 # Appels API Polymarket (gamma-api, data-api, clob)
-│   ├── detector.py                # Calcul Z-score et score composite de détection
-│   └── llm_advisor.py             # Intégration Claude + envoi Pushover
+│   └── IA_in_finance.csv          # Dataset principal
 ├── docs/
-│   └── rapport.pdf                # Rapport final du projet
-├── selected_approach/             # Approche retenue et justification méthodologique
+│   └── IA_in_finance.pptx         # Présentation du projet
+├── selected_approach/
+│   └── AI in Finance Polybot.ipynb  # Notebook principal (scraping + détection + LLM + push)
+├── src/
+│   └── Polybot.py                 # Code source principal
 └── README.md
 
 ---
