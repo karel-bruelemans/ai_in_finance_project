@@ -51,7 +51,7 @@ Concrètement, le système surveille en temps réel les flux de transactions sur
 2. L'associer intelligemment à un actif financier pertinent (par exemple relier "opération militaire en Iran" au pétrole brut)
 3. Formuler une recommandation directionnelle cohérente, le tout **avant que l'information ne soit publiquement connue**
 
-L'ambition de ce projet est de mettre en lumière une réalité souvent ignorée du grand public : les marchés de prédiction, et Polymarket en particulier, peuvent constituer un vecteur de délits d'initiés tout aussi préoccupant que les marchés financiers traditionnels. Lorsqu'un insider place plusieurs centaines de milliers de dollars sur la chute d'un régime politique quelques heures avant une intervention militaire, il laisse une trace on-chain visible par tous — et c'est précisément cette trace que notre système cherche à exploiter.
+L'ambition de ce projet est de mettre en lumière une réalité souvent ignorée du grand public : les marchés de prédiction, et Polymarket en particulier, peuvent constituer un vecteur de délits d'initiés tout aussi préoccupant que les marchés financiers traditionnels. Lorsqu'un insider place plusieurs centaines de milliers de dollars sur la chute d'un régime politique quelques heures avant une intervention militaire, il laisse une trace on-chain visible par tous, et c'est précisément cette trace que notre système cherche à exploiter.
 
 Pour cela, nous avons loué un serveur **AWS en Allemagne** pour exécuter le code en continu et recevoir les alertes 24h/24.
 
@@ -154,11 +154,11 @@ Le preprocessing de ce projet est relativement léger comparé à un projet de M
 
 Notre approche se décompose en **deux blocs distincts** :
 
-**Bloc 1 — Moteur de détection statistique (Z-score composite)**
+**Bloc 1 - Moteur de détection statistique (Z-score composite)**
 
 Nous avons délibérément écarté un classifieur ML supervisé : la rareté des labels positifs et l'impossibilité d'obtenir un historique exhaustif des transactions rendaient l'entraînement peu crédible. Nous nous sommes appuyés sur une définition opérationnelle du délit d'initié, inspirée du Code monétaire et financier : montant anormalement élevé, timing suspect, et profil de compte inhabituel.
 
-**Bloc 2 — LLM Claude (raisonnement & recommandation)**
+**Bloc 2 - LLM Claude (raisonnement & recommandation)**
 
 C'est lui qui reçoit le titre du pari, sa catégorie et le sens du signal détecté, et qui produit en retour une recommandation structurée en JSON. Le choix de Claude s'explique par la qualité de ses capacités de raisonnement macro et par la compatibilité de son API avec Google Colab.
 
