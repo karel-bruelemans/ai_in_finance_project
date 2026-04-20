@@ -7,6 +7,7 @@ Polymarket insider detection system
 ## 1. Project Information
 
 | | |
+|---|---|
 | **Project Title** | Polymarket : la fin de l'information privilégié ? |
 | **Group Name** | Robin Wood |
 | **Group Members** | Broudic Goldman Erwan <br> Levelleux Antoine <br> Piat Quentin |
